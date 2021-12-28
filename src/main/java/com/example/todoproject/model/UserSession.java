@@ -44,7 +44,7 @@ public class UserSession {
         this.id = id;
     }
 
-    @Id
+
     public Long getId() {
         return id;
     }
