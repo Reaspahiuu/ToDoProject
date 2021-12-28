@@ -10,6 +10,12 @@ public class UserSession {
     private String sessionHashCode;
     private String ipAddress;
 
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+
     public User getUser() {
         return user;
     }
@@ -17,11 +23,6 @@ public class UserSession {
     public void setUser(User user) {
         this.user = user;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
 
     public String getSessionHashCode() {
         return sessionHashCode;

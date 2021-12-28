@@ -13,6 +13,11 @@ public class User {
     private String email;
     private String password;
 
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private List<UserSession> userSessionList;
+
+
     public List<UserSession> getUserSessionList() {
         return userSessionList;
     }
@@ -21,9 +26,6 @@ public class User {
         this.userSessionList = userSessionList;
     }
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private List<UserSession> userSessionList;
 
     public Long getId() {
         return id;
