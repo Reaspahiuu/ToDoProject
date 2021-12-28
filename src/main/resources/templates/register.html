@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register User</title>
+    <style>
+        input{
+            margin: 1% 0;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <form action="/todo/register-user" method="post" th:object="${user}">
+        <label>
+            Name:
+            <input th:field="${user.name}" type="text" />
+        </label> <br>
+        <label>
+            Last Name:
+            <input th:field="${user.lastName}" type="text" />
+        </label> <br>
+
+        <label>
+            Email:
+            <input th:field="${user.email}" type="email" />
+        </label> <br>
+
+        <label>
+            Password:
+            <input th:field="${user.password}" type="password"/>
+        </label> <br>
+        <input type="submit" value="Register" />
+    </form>
+</center>
+</body>
+</html>
